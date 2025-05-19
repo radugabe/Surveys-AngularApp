@@ -1,0 +1,15 @@
+.app-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+  
+.text-center {
+    text-align: center;
+}
+
+.mt-xl {
+    margin-top: var(--spacing-xl);
+}

@@ -1,0 +1,37 @@
+@switch (selectedView) {
+    @case('bar') {
+      <results-bar-chart
+        [survey]="survey"
+        [aggregatedResults]="aggregatedResults">
+      </results-bar-chart>
+    }
+  
+    @case('pie') {
+      <results-pie-chart
+        [survey]="survey"
+        [aggregatedResults]="aggregatedResults">
+      </results-pie-chart>
+    }
+  
+    @case('line') {
+      <results-line-chart
+        [survey]="survey"
+        [aggregatedResults]="aggregatedResults">
+      </results-line-chart>
+    }
+  
+    @case('doughnut') {
+      <results-doughnut-chart
+        [survey]="survey"
+        [aggregatedResults]="aggregatedResults">
+      </results-doughnut-chart>
+    }
+  
+    @case('table') {
+      <results-table
+        [survey]="survey"
+        [aggregatedResults]="aggregatedResults">
+      </results-table>
+    }
+  }
+  

@@ -1,0 +1,88 @@
+mat-card {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+mat-form-field.full-width {
+  width: 100%;
+}
+
+.option-list {
+  margin-bottom: var(--spacing-lg);
+}
+
+.option-item {
+  display: flex;
+  align-items: stretch;
+  gap: 1.2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.option-item mat-form-field {
+  flex: 1;
+}
+
+.remove-option-btn {
+  background-color: rgba(183, 28, 28, 0.2);
+  padding: 1rem;
+  color: #EF5350;
+  border: none;
+  border-radius: var(--border-radius-large);
+  width: 56px;
+  height: 56px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.remove-option-btn:hover {
+  background-color: rgba(183, 28, 28, 0.3);
+}
+
+.question-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .option-item {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .option-item mat-form-field {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .remove-option-btn {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    padding: 0.6rem;
+    margin-top: 0.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .question-actions {
+    margin: 0 auto;
+    width: 80%;
+    flex-direction: column;
+  }
+
+  .remove-option-btn {
+    width: 48px;
+    height: 48px;
+  }
+}

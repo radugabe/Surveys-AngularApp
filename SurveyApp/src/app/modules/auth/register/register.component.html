@@ -1,0 +1,151 @@
+<div class="dark-background page-container">
+  <mat-card class="card card-dark card-centered">
+    <h2 class="title"> {{texts.title}} </h2>
+
+    <form [formGroup]="form" (ngSubmit)="register()">
+      <div class="form-field-wrapper">
+        <mat-form-field appearance="fill">
+          <mat-label> {{ texts.usernameLabel }} </mat-label>
+          <input matInput
+                 formControlName="username"
+                 autocomplete="off"
+                 autocorrect="off"
+                 autocapitalize="none"
+                 spellcheck="false"
+                 (focus)="focusedField = 'username'"
+                 (blur)="focusedField = null" />
+        </mat-form-field>
+
+        @if (focusedField === 'username') {
+          <div class="validation-popout">
+            @if (form.get('username')?.invalid) {
+              <div class="validation-item">
+                <mat-icon class="validation-icon">cancel</mat-icon>
+                {{ texts.validations.username.invalid }}
+              </div>
+            }
+
+            @if (form.get('username')?.valid) {
+              <div class="validation-item valid">
+                <mat-icon class="validation-icon">check_circle</mat-icon>
+                {{ texts.validations.username.valid }}
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="form-field-wrapper">
+        <mat-form-field appearance="fill">
+          <mat-label> {{ texts.passwordLabel }} </mat-label>
+          <input matInput
+                 [type]="hidePassword ? 'password' : 'text'"
+                 formControlName="password"
+                 (focus)="focusedField = 'password'"
+                 (blur)="focusedField = null" />
+
+          <button mat-icon-button matSuffix
+                  (click)="hidePassword = !hidePassword"
+                  [attr.aria-label]="hidePassword ? 'Show password' : 'Hide password'"
+                  type="button">
+            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        @if (focusedField === 'password') {
+          <div class="validation-popout">
+            
+            @if (passwordRules.length && passwordRules.uppercase && passwordRules.number && passwordRules.specialChar) {
+              <div class="validation-item valid">
+                <mat-icon class="validation-icon">check_circle</mat-icon>
+                {{ texts.validations.password.allPassed }}
+              </div>
+            } @else {
+        
+              <div class="validation-item"
+                   [class.valid]="passwordRules.length"
+                   [class.invalid]="!passwordRules.length">
+                <mat-icon class="validation-icon">
+                  {{ passwordRules.length ? 'check_circle' : 'cancel' }}
+                </mat-icon>
+                {{ texts.validations.password.length }}
+              </div>
+        
+              <div class="validation-item"
+                   [class.valid]="passwordRules.uppercase"
+                   [class.invalid]="!passwordRules.uppercase">
+                <mat-icon class="validation-icon">
+                  {{ passwordRules.uppercase ? 'check_circle' : 'cancel' }}
+                </mat-icon>
+                {{ texts.validations.password.uppercase }}
+              </div>
+        
+              <div class="validation-item"
+                   [class.valid]="passwordRules.number"
+                   [class.invalid]="!passwordRules.number">
+                <mat-icon class="validation-icon">
+                  {{ passwordRules.number ? 'check_circle' : 'cancel' }}
+                </mat-icon>
+                {{ texts.validations.password.number }}
+              </div>
+        
+              <div class="validation-item"
+                   [class.valid]="passwordRules.specialChar"
+                   [class.invalid]="!passwordRules.specialChar">
+                <mat-icon class="validation-icon">
+                  {{ passwordRules.specialChar ? 'check_circle' : 'cancel' }}
+                </mat-icon>
+                {{ texts.validations.password.specialChar }}
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="form-field-wrapper">
+        <mat-form-field appearance="fill">
+          <mat-label> {{ texts.confirmPasswordLabel }} </mat-label>
+          <input matInput
+                 [type]="hideConfirmPassword ? 'password' : 'text'"
+                 formControlName="confirmPassword"
+                 (focus)="focusedField = 'confirmPassword'"
+                 (blur)="focusedField = null" />
+
+          <button mat-icon-button matSuffix
+                  (click)="hideConfirmPassword = !hideConfirmPassword"
+                  [attr.aria-label]="hideConfirmPassword ? 'Show password' : 'Hide password'"
+                  type="button">
+            <mat-icon>{{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        @if (focusedField === 'confirmPassword') {
+          <div class="validation-popout password-match-popout">
+            @if (form.hasError('passwordsMismatch')) {
+              <div class="validation-item invalid">
+                <mat-icon class="validation-icon">cancel</mat-icon>
+                {{ texts.validations.confirmPassword.mismatch }}
+              </div>
+            }
+
+            @if (!form.hasError('passwordsMismatch') && form.get('confirmPassword')?.valid) {
+              <div class="validation-item valid">
+                <mat-icon class="validation-icon">check_circle</mat-icon>
+                {{ texts.validations.confirmPassword.match }}
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <button mat-raised-button color="primary" type="submit" class="full-width-button">
+        {{ texts.registerButton }}
+      </button>
+    </form>
+
+    <p class="text-center mt-2">
+      {{ texts.haveAccountText }}
+      <a (click)="goToLogin()" class="app-link"> {{ texts.loginLink }} </a>
+    </p>
+  </mat-card>
+</div>

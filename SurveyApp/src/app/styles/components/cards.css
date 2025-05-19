@@ -1,0 +1,25 @@
+.card,
+mat-card.card {
+  padding: var(--spacing-xl);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-dark,
+mat-card.card-dark {
+  border-radius: var(--border-radius-large);
+  background-color: var(--card-background);
+  color: var(--text-primary);
+  box-shadow: var(--box-shadow);
+}
+
+.card-centered {
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: var(--spacing-large);
+    border-radius: var(--border-radius-medium);
+  }
+}

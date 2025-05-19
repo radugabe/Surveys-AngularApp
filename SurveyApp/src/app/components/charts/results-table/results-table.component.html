@@ -1,0 +1,26 @@
+@if (survey) {
+  @for (question of survey.questions; track i; let i = $index) {
+    <div class="card card-dark chart-question-container">
+      <div class="title">
+        {{ i + 1 }}. {{ question.text }}
+      </div>
+
+      <table mat-table [dataSource]="question.options">
+        <ng-container matColumnDef="option">
+          <th mat-header-cell *matHeaderCellDef> {{texts.optionHeader}} </th>
+          <td mat-cell *matCellDef="let option">{{ option }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="count">
+          <th mat-header-cell *matHeaderCellDef> {{texts.responsesHeader}}</th>
+          <td mat-cell *matCellDef="let option">
+            {{ aggregatedResults[i]?.[option] ?? 0 }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  }
+}

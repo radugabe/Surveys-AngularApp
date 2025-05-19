@@ -1,0 +1,41 @@
+<div class="page-background home-container">
+  <h3 class="section-title">{{ survey()?.title }}</h3>
+
+  @if (survey()) {
+    <mat-card class="card card-dark">
+      <form (ngSubmit)="submitAnswers()">
+        @for (question of survey()?.questions ?? []; track i; let i = $index) {
+          <div class="title text-left">
+            {{ i + 1 }}. {{ question.text }}
+          </div>
+
+          <mat-radio-group
+            [value]="answers()[i]"
+            (change)="onAnswerChange(i, $event.value)">
+            @for (option of question.options; track option) {
+              <div 
+                class="card card-dark radio-button"
+                (click)="answers()[i] = option">
+                <mat-radio-button
+                  class="custom-radio-animated"
+                  color="warn"
+                  [value]="option">
+                  <span class="option-text">{{ option }}</span>
+                </mat-radio-button>
+            </div>
+            }
+          </mat-radio-group>
+        }
+
+        <div class="btn-group-centered">
+          <button mat-raised-button class="btn-success" type="submit">
+            {{ texts.submit }}
+          </button>
+          <button mat-raised-button class="btn-danger" type="button" (click)="cancel()">
+            {{ texts.cancel }}
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  }
+</div>

@@ -1,0 +1,33 @@
+<div class="page-background create-survey-container">
+  <h2 class="title"> {{ texts.title }} </h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label> {{ texts.surveyTitleLabel }} </mat-label>
+    <input matInput [(ngModel)]="titleValue" required />
+  </mat-form-field>
+
+  @for (question of questions(); track i; let i = $index) {
+      <question-form class=""
+        [question]="question"
+        [questionIndex]="i"
+        [totalQuestions]="questions().length"
+        (remove)="removeQuestion($event)"
+        (addOption)="addOption($event)"
+        (removeOption)="removeOption($event)">
+      </question-form>
+  }
+
+  <button
+    mat-stroked-button
+    class="btn-add-question"
+    type="button"
+    (click)="addQuestion()"
+    [disabled]="questions().length >= 10">
+    {{ texts.addQuestion }}
+  </button>
+
+  <div class="survey-actions">
+    <button mat-raised-button class="btn-danger" (click)="cancel()"> {{ texts.cancel }} </button>
+    <button mat-raised-button class="btn-success" (click)="saveSurvey()"> {{ texts.save }} </button>
+  </div>
+</div>

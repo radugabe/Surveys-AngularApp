@@ -1,0 +1,24 @@
+@if (isVisible && type === 'confirm') {
+  <div class="dialog-overlay"></div>
+}
+
+@if (isVisible) {
+  <div [class]="type" class="snackbar" [class.confirm-mode]="type === 'confirm'">
+    <p class="displayed-text">{{ message }}</p>
+
+    @if (type === 'confirm') {
+      <div class="btn-group-centered">
+        <button mat-raised-button 
+            [ngClass]="invertButtonColors ? 'btn-danger' : 'btn-success'"
+            (click)="handleResponse(true)">
+          {{texts.yes}}
+        </button>
+        <button mat-raised-button 
+            [ngClass]="invertButtonColors ? 'btn-success' : 'btn-danger'"
+            (click)="handleResponse(false)">
+          {{texts.no}}
+        </button>
+      </div>
+    }
+  </div>
+}

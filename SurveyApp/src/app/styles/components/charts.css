@@ -1,0 +1,44 @@
+.chart-question-container {
+  margin: 0 auto var(--spacing-xl);
+}
+
+.mat-mdc-table {
+  background-color: transparent !important;
+  border-radius: var(--border-radius-medium);
+  overflow: hidden;
+  width: 100%;
+}
+
+.mat-mdc-header-row {
+  background-color: var(--dark-dark) !important;
+  text-transform: uppercase;
+}
+
+.mat-mdc-header-cell {
+  color: var(--text-primary) !important;
+}
+
+.mat-mdc-cell {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.mat-mdc-row:nth-child(even) {
+  background-color: var(--quite-dark-dark);
+}
+
+@media (max-width: 768px) {
+  .chart-question-container {
+    max-width: 100%;
+}
+
+  .chart-question-title {
+    font-size: 1.6rem;
+    padding-top: 1rem;
+  }
+
+  .chart-canvas-container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}

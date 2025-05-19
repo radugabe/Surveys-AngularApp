@@ -1,0 +1,21 @@
+@import 'app/styles/themes/dark.css';
+@import 'app/styles/components/buttons.css';
+@import 'app/styles/components/cards.css';
+@import 'app/styles/components/form-fields.css';
+@import 'app/styles/components/links.css';
+@import 'app/styles/components/typography.css';
+@import 'app/styles/components/charts.css';
+
+html, body {
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  color: var(--text-primary);
+}
+
+app-root {
+  display: block;
+  min-height: 100vh;
+}

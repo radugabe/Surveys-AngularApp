@@ -1,0 +1,76 @@
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 999;
+}
+
+.displayed-text {
+  font-size: 1.3rem;
+  white-space: pre-line;
+  text-align: center;
+}
+
+.snackbar {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.2rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  z-index: 1000;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  width: fit-content;
+  min-width: 300px;
+}
+
+.snackbar:not(.confirm-mode) {
+  top: 1.5rem;
+  animation: fadeInOut 3s ease-in-out;
+  padding: 0;
+}
+
+.confirm-mode {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2C2C2C;
+  animation: none;
+}
+
+.snackbar.confirm-mode {
+  animation: confirmFadeIn 0.3s ease-out forwards;
+}
+
+.success {
+  background-color: var(--success-color);
+}
+
+.error {
+  background-color: var(--error-color);
+}
+
+.info {
+  background-color: var(--neutral-color);
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px) translateX(-50%); }
+  10% { opacity: 1; transform: translateY(0) translateX(-50%); }
+  90% { opacity: 1; transform: translateY(0) translateX(-50%); }
+  100% { opacity: 0; transform: translateY(-20px) translateX(-50%); }
+}
+
+@keyframes confirmFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,37 @@
+
+.password-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle button {
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  border-radius: 90% !important;
+}
+
+.password-toggle button mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+}
+
+p.text-center {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+button[mat-raised-button] {
+  width: 80%;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.card-centered {
+  max-width: 600px;
+}

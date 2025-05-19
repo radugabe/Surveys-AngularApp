@@ -1,0 +1,12 @@
+<header class="header-container">
+  <div class="header-left">
+    <span class="header-title">
+      {{ texts.welcomePrefix }} <strong class="accent-text">{{ username }}</strong>!
+    </span>
+  </div>
+
+  <div class="header-right">
+    <button mat-stroked-button (click)="goToProfile()"> {{texts.profile}} </button>
+    <button mat-raised-button color="primary" (click)="confirmLogout()"> {{texts.logout}} </button>
+  </div>
+</header>

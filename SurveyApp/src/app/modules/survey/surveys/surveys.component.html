@@ -1,0 +1,85 @@
+<div class="page-background home-container">
+
+  @if (currentUser()?.role === 'respondent') {
+    <div class="card card-dark surveys-section">
+      <h3 class="section-title"> {{ texts.respondent.availableTitle }} </h3>
+
+      @if (openSurveys().length > 0) {
+        <ul class="survey-list">
+          @for (survey of openSurveys(); track survey.id) {
+            <surveys-card
+              [survey]="survey"
+              [role]="'respondent'"
+              [isCompleted]="hasCompleted(survey.id)"
+              (complete)="completeSurvey($event)">
+            </surveys-card>
+          }
+        </ul>
+      } @else {
+        <div class="empty-list"> {{ texts.respondent.noAvailable }} </div>
+      }
+    </div>
+
+    <div class="card card-dark surveys-section">
+      <h3 class="section-title"> {{ texts.respondent.closedTitle }} </h3>
+
+      @if (closedSurveys().length > 0) {
+        <ul class="survey-list">
+          @for (survey of closedSurveys(); track survey.id) {
+            <surveys-card
+              [survey]="survey"
+              [role]="'respondent'"
+              (viewResults)="viewResults($event)">
+            </surveys-card>
+          }
+        </ul>
+      } @else {
+        <div class="empty-list"> {{ texts.respondent.noClosed }} </div>
+      }
+    </div>
+  }
+
+  @if (currentUser()?.role === 'coordinator') {
+    <div class="card card-dark surveys-section">
+      <h3 class="section-title"> {{ texts.coordinator.openTitle }} </h3>
+
+      @if (openSurveys().length > 0) {
+        <ul class="survey-list">
+          @for (survey of openSurveys(); track survey.id) {
+            <surveys-card
+              [survey]="survey"
+              [role]="'coordinator'"
+              (close)="closeSurvey($event)"
+              (viewResults)="viewResults($event)"
+              (delete)="deleteSurvey($event)">
+            </surveys-card>
+          }
+        </ul>
+      } @else {
+        <div class="empty-list"> {{ texts.coordinator.noOpen }} </div>
+      }
+    </div>
+
+    <div class="card card-dark surveys-section">
+      <h3 class="section-title"> {{ texts.coordinator.closedTitle }} </h3>
+
+      @if (closedSurveys().length > 0) {
+        <ul class="survey-list">
+          @for (survey of closedSurveys(); track survey.id) {
+            <surveys-card
+              [survey]="survey"
+              [role]="'coordinator'"
+              (viewResults)="viewResults($event)"
+              (reopen)="reopenSurvey($event)"
+              (delete)="deleteSurvey($event)">
+            </surveys-card>
+          }
+        </ul>
+      } @else {
+        <div class="empty-list"> {{ texts.coordinator.noClosed }} </div>
+      }
+    </div>
+
+    <button mat-raised-button color="primary" (click)="goToCreateSurvey()"> {{ texts.coordinator.addNewSurvey }} </button>
+  }
+</div>

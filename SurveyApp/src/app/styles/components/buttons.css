@@ -1,0 +1,93 @@
+.full-width-button {
+  width: 100%;
+}
+
+.btn-group-centered {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.mdc-button__label {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.mat-mdc-button,
+.mat-mdc-raised-button,
+.mdc-button {
+  border-radius: var(--border-radius-small) !important;
+}
+
+.mat-mdc-raised-button.mat-primary {
+  background-color: var(--primary-color) !important;
+  color: var(--text-secondary) !important;
+}
+
+.mat-mdc-raised-button.mat-primary:hover {
+  background-color: var(--primary-color-dark) !important;
+}
+
+button[mat-stroked-button] {
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--primary-color) !important;
+}
+
+button[mat-stroked-button]:hover {
+  background-color: rgba(54, 5, 5, 0.629) !important;
+}
+
+button[mat-raised-button].btn-danger {
+  background-color: var(--error-color);
+  color: white;
+}
+
+button[mat-raised-button].btn-danger:hover {
+  background-color: var(--error-color-dark);
+}
+
+button[mat-raised-button].btn-neutral {
+  background-color: var(--neutral-color);
+  color: white;
+}
+
+button[mat-raised-button].btn-neutral:hover {
+  background-color: var(--neutral-color-dark);
+}
+
+button[mat-raised-button].btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+button[mat-raised-button].btn-success:hover {
+  background-color: var(--success-color-dark);
+}
+
+button[mat-raised-button].btn-predanger {
+  background-color: var(--preerror-color);
+  color: white;
+}
+
+button[mat-raised-button].btn-predanger:hover {
+  background-color: var(--preerror-color-dark);
+}
+
+button[mat-raised-button].btn-preneutral {
+  background-color: var(--preneutral-color);
+  color: white;
+}
+
+button[mat-raised-button].btn-preneutral:hover {
+  background-color: var(--preneutral-color-dark);
+}
+
+@media (max-width: 600px) {
+  button,
+  .mat-mdc-button,
+  .mat-mdc-raised-button,
+  .mdc-button {
+    padding: 0.6rem 1.2rem;
+  }
+}

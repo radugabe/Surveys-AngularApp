@@ -1,0 +1,31 @@
+<mat-card class="card card-dark">
+  <label class="section-title"> {{ texts.sectionTitlePrefix }} {{ questionIndex + 1 }}</label>
+
+  <mat-form-field appearance="fill" class="mat-mdc-form-field full-width">
+    <mat-label> {{ texts.questionLabel}} </mat-label>
+    <input matInput [(ngModel)]="question.text" [placeholder]="texts.questionPlaceholder"
+    />
+  </mat-form-field>
+
+  <div class="option-list">
+    @for (option of question.options; track i; let i = $index) {
+      <div class="option-item">
+        <mat-form-field appearance="fill" class="mat-mdc-form-field">
+          <mat-label> {{ texts.optionLabelPrefix }} {{ i + 1 }}</mat-label>
+          <input matInput [(ngModel)]="question.options[i]" />
+        </mat-form-field>
+
+        @if (question.options.length > 1) {
+          <button class="remove-option-btn" (click)="onRemoveOption(i)">×</button>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="question-actions">
+    <button mat-raised-button class="btn-preneutral" (click)="onAddOption()"> {{ texts.addOption }} </button>
+    @if (totalQuestions > 1) {
+      <button mat-raised-button class="btn-danger" (click)="onRemoveQuestion()"> {{ texts.removeQuestion }}</button>
+    }
+  </div>
+</mat-card>

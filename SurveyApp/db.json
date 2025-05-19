@@ -1,0 +1,333 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": "coordinator"
+    },
+    {
+      "id": "2",
+      "username": "radu",
+      "password": "123",
+      "role": "respondent"
+    },
+    {
+      "id": "3",
+      "username": "test",
+      "password": "123",
+      "role": "respondent"
+    },
+    {
+      "id": "4",
+      "username": "ruxi",
+      "password": "123",
+      "role": "respondent"
+    },
+    {
+      "id": "5",
+      "username": "Catalin",
+      "password": "123",
+      "role": "respondent"
+    },
+    {
+      "id": "6",
+      "username": "Mariana",
+      "password": "123",
+      "role": "respondent"
+    },
+    {
+      "id": "7",
+      "username": "Andi",
+      "password": "123",
+      "role": "respondent"
+    },
+    {
+      "id": "8",
+      "username": "radu2",
+      "password": "123",
+      "role": "respondent"
+    }
+  ],
+  "surveys": [
+    {
+      "id": "1",
+      "title": "Detinator de pisica",
+      "questions": [
+        {
+          "text": "Care este rasa preferata ?",
+          "options": [
+            "British shorthair",
+            "British longhair",
+            "Persana",
+            "Birmaneza",
+            "Sfinx",
+            "Siameza",
+            "Angora turceasca"
+          ]
+        },
+        {
+          "text": "Cate pisici detineti?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "0"
+          ]
+        },
+        {
+          "text": "Va deranjeaza parul de pisica ?",
+          "options": [
+            "Da",
+            "Nu",
+            "Asa si asa"
+          ]
+        }
+      ],
+      "createdBy": "1",
+      "isOpen": false,
+      "createdAt": "2025-04-11T19:47:17.225Z",
+      "autoCloseStartAt": "2025-04-16T10:05:50.815Z"
+    },
+    {
+      "id": "2",
+      "title": "Consumul de zahar",
+      "questions": [
+        {
+          "text": "Sunteti consumator de produse zaharate?",
+          "options": [
+            "Da",
+            "Nu",
+            "Ocazional"
+          ]
+        },
+        {
+          "text": "In ce perioada a zilei consumati cel mai mult?",
+          "options": [
+            "Dimineata",
+            "Pranz",
+            "Seara",
+            "Noaptea"
+          ]
+        },
+        {
+          "text": "Simtiti nevoia sa consumati mai mult zahar in perioadele stresante?",
+          "options": [
+            "Da ",
+            "Nu"
+          ]
+        },
+        {
+          "text": "Credeti ca ati putea renunta la zahar?",
+          "options": [
+            "Da ",
+            "Nu",
+            "Cred ca da"
+          ]
+        }
+      ],
+      "createdBy": "1",
+      "isOpen": false,
+      "createdAt": "2025-04-11T19:47:19.543Z",
+      "autoCloseStartAt": "2025-04-16T10:05:49.069Z"
+    },
+    {
+      "id": "3",
+      "title": "Posesor BMW",
+      "questions": [
+        {
+          "text": "Care este seria preferata?",
+          "options": [
+            "Seria 1",
+            "Seria 2",
+            "Seria 3",
+            "Seria 4",
+            "Seria 5",
+            "Seria 6",
+            "Seria 7"
+          ]
+        },
+        {
+          "text": "V-ati mai lua alta masina?",
+          "options": [
+            "Da",
+            "Nu"
+          ]
+        },
+        {
+          "text": "Ce pachet preferati?",
+          "options": [
+            "Bussines",
+            "Sport",
+            "M"
+          ]
+        },
+        {
+          "text": "Cati kilometri faceti pe an in medie?",
+          "options": [
+            "Sub 10.000",
+            "10.000 - 30.000",
+            "Peste 30.000"
+          ]
+        }
+      ],
+      "createdBy": "1",
+      "isOpen": false,
+      "createdAt": "2025-04-11T11:18:03.807Z",
+      "autoCloseStartAt": "2025-04-15T09:08:54.627Z"
+    },
+    {
+      "id": "4",
+      "title": "test",
+      "questions": [
+        {
+          "text": "test1",
+          "options": [
+            "test11",
+            "test111"
+          ]
+        },
+        {
+          "text": "test2",
+          "options": [
+            "test22",
+            "test222"
+          ]
+        }
+      ],
+      "createdBy": "1",
+      "isOpen": false,
+      "createdAt": "2025-04-16T10:06:45.291Z",
+      "autoCloseStartAt": "2025-04-16T10:06:45.291Z"
+    }
+  ],
+  "responses": [
+    {
+      "id": "1",
+      "surveyId": "1",
+      "userId": "4",
+      "answers": [
+        "British longhair",
+        "4",
+        "Da"
+      ],
+      "date": "2025-04-10T16:13:53.850Z"
+    },
+    {
+      "id": "2",
+      "surveyId": "2",
+      "userId": "4",
+      "answers": [
+        "Da",
+        "Noaptea",
+        "Da ",
+        "In niciun caz"
+      ],
+      "date": "2025-04-10T16:14:36.292Z"
+    },
+    {
+      "id": "3",
+      "surveyId": "1",
+      "userId": "7",
+      "answers": [
+        "Siameza",
+        "1",
+        "Da"
+      ],
+      "date": "2025-04-10T16:19:19.915Z"
+    },
+    {
+      "id": "4",
+      "surveyId": "2",
+      "userId": "7",
+      "answers": [
+        "Ocazional",
+        "Seara",
+        "Nu",
+        "Da "
+      ],
+      "date": "2025-04-10T16:19:42.224Z"
+    },
+    {
+      "id": "5",
+      "surveyId": "1",
+      "userId": "6",
+      "answers": [
+        "British longhair",
+        "2",
+        "Da"
+      ],
+      "date": "2025-04-10T16:19:56.790Z"
+    },
+    {
+      "id": "6",
+      "surveyId": "2",
+      "userId": "6",
+      "answers": [
+        "Da",
+        "Seara",
+        "Da ",
+        "In niciun caz"
+      ],
+      "date": "2025-04-10T16:20:20.234Z"
+    },
+    {
+      "id": "7",
+      "surveyId": "1",
+      "userId": "3",
+      "answers": [
+        "British longhair",
+        "2",
+        "Da"
+      ],
+      "date": "2025-04-10T16:21:23.787Z"
+    },
+    {
+      "id": "8",
+      "surveyId": "2",
+      "userId": "3",
+      "answers": [
+        "Da",
+        "Dimineata",
+        "Da ",
+        "Da "
+      ],
+      "date": "2025-04-10T16:22:07.154Z"
+    },
+    {
+      "id": "10",
+      "surveyId": "1",
+      "userId": "2",
+      "answers": [
+        "Sfinx",
+        "2",
+        "Nu"
+      ],
+      "submittedAt": "2025-04-12T21:41:42.917Z"
+    },
+    {
+      "id": "11",
+      "surveyId": "1",
+      "userId": "9",
+      "answers": [
+        "Sfinx",
+        "0",
+        "Asa si asa"
+      ],
+      "submittedAt": "2025-04-15T20:31:22.837Z"
+    },
+    {
+      "id": "12",
+      "surveyId": "3",
+      "userId": "2",
+      "answers": [
+        "Seria 2",
+        "Nu",
+        "Sport",
+        "10.000 - 30.000"
+      ],
+      "submittedAt": "2025-04-15T23:47:58.311Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+.not-found-container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 0 3rem;
+}
+
+.not-found-title {
+  font-size: 6rem;
+  margin: 0;
+  color: var(--error-color);
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.not-found-message {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin: 1.5rem 0 2rem;
+  text-align: center;
+}
+
+button[mat-raised-button] {
+  width: auto;
+  align-self: center;
+}
+
+.card-centered {
+  max-width: 600px;
+}
+
+@media (max-width: 600px) {
+  .not-found-title {
+    font-size: 4rem;
+  }
+
+  .not-found-message {
+    font-size: 1.1rem;
+  }
+}

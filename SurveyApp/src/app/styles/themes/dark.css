@@ -1,0 +1,49 @@
+:root {
+  --primary-color: #a21a1a;
+  --primary-color-dark: #930000;
+  --background-color: #1A1A1A;
+  --card-background: #232323;
+  --input-background: #2A2A2A;
+  --dark-dark: #1c1c1c;
+  --quite-dark-dark: #2c2c2c;
+  --text-primary: #E0E0E0;
+  --text-secondary: #CCCCCC;
+  --text-hint: #AAAAAA;
+  --error-color: #b71c1c90;
+  --error-color-dark: rgba(159, 24, 24, 0.39);
+  --neutral-color: #342f7d;
+  --neutral-color-dark: #28227a;
+  --success-color: #356d38;
+  --success-color-dark: rgba(56, 134, 58, 0.591);
+  --preerror-color: #98650d;
+  --preerror-color-dark: #98650d96;
+  --preneutral-color: #6e6e6e;
+  --preneutral-color-dark: #6e6e6e;
+  --hover-color: rgba(255, 255, 255, 0.06);
+
+  --box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+
+  --spacing-s: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+
+  --border-radius-small: 12px;
+  --border-radius-medium: 16px;
+  --border-radius-large: 20px;
+}
+  
+.dark-background {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 0.1px);
+  padding: var(--spacing-xl);
+  box-sizing: border-box;
+}

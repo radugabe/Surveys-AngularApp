@@ -1,0 +1,49 @@
+<div class="dark-background page-container">
+  <mat-card class="card card-dark card-centered">
+    <h2 class="title">{{ texts.title }}</h2>
+
+    <form (ngSubmit)="login()">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ texts.usernameLabel }}</mat-label>
+        <input matInput 
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="none"
+          spellcheck="false"
+          [(ngModel)]="username" 
+          name="username" 
+          required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>{{ texts.passwordLabel }}</mat-label>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          [(ngModel)]="password"
+          name="password"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="hidePassword = !hidePassword"
+          [attr.aria-label]="hidePassword ? 'Show password' : 'Hide password'"
+          class="password-toggle"
+        >
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="full-width-button" type="submit">
+        {{ texts.loginButton }}
+      </button>
+
+      <p class="text-center mt-xl">
+        {{ texts.noAccountText }}
+        <a (click)="goToRegister()" class="app-link"> {{ texts.registerLink }} </a>
+      </p>
+    </form>
+  </mat-card>
+</div>

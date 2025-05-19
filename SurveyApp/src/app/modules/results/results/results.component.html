@@ -1,0 +1,30 @@
+<div class="page-background results-container">
+  <div class="results-header">
+    <h2 class="section-title"> {{ texts.titlePrefix }} {{ survey()?.title }}</h2>
+  </div>
+
+  <mat-form-field appearance="fill" class="form-field w-full">
+    <mat-label> {{ texts.selectLabel }} </mat-label>
+    <mat-select [(ngModel)]="selectedView" panelClass="dark-select-panel">
+      @for (view of options; track view) {
+        <mat-option [value]="view">
+          {{ view | titlecase }} {{ texts.chartSuffix }}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  
+  <div class="card card-dark card-centered">
+    <survey-results-chart
+      [selectedView]="selectedView()"
+      [survey]="survey()!"
+      [aggregatedResults]="aggregatedResults()">
+    </survey-results-chart>
+  </div>
+
+  <div class="btn-group-centered">
+    <button mat-raised-button class="btn-preneutral" (click)="goToHome()">
+      {{ texts.back }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<li class="survey-item">
+  <span class="survey-title">{{ survey.title }}</span>
+
+  <div class="survey-actions">
+
+    @if (role === 'respondent' && survey.isOpen) {
+      @if (!isCompleted) {
+        <button mat-raised-button class="btn-success" (click)="onComplete()"> {{ texts.complete }} </button>
+      } @else {
+        <button mat-raised-button class="btn-preneutral" disabled> {{ texts.completed }} </button>
+      }
+    }
+
+    @if (role === 'respondent' && !survey.isOpen) {
+      <button mat-raised-button class="btn-neutral" (click)="onViewResults()"> {{ texts.results }} </button>
+    }
+
+    @if (role === 'coordinator' && survey.isOpen) {
+      <button mat-raised-button class="btn-neutral" (click)="onViewResults()"> {{ texts.results }} </button>
+      <button mat-raised-button class="btn-predanger" (click)="onClose()"> {{ texts.close }} </button>
+      <button mat-raised-button class="btn-danger" (click)="onDelete()"> {{ texts.delete }} </button>
+    }
+
+    @if (role === 'coordinator' && !survey.isOpen) {
+      <button mat-raised-button class="btn-neutral" (click)="onViewResults()"> {{ texts.results }} </button>
+      <button mat-raised-button class="btn-success" (click)="onReopen()"> {{ texts.reopen }} </button>
+      <button mat-raised-button class="btn-danger" (click)="onDelete()"> {{ texts.delete }} </button>
+    }
+
+  </div>
+</li>

@@ -1,0 +1,104 @@
+.form-field-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-centered {
+  max-width: 600px;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+p.text-center {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+button[mat-raised-button] {
+  width: 80%;
+}
+
+.validation-popout,
+.password-match-popout {
+  position: absolute;
+  top: calc(100% - 20px);
+  right: 2.2rem;  
+  z-index: 10;
+  background-color: var(--input-background);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--box-shadow);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  width: 280px;
+  max-width: 90vw;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.validation-popout::before,
+.password-match-popout::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 16px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--input-background);
+}
+
+.validation-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  transition: color 0.3s ease;
+  color: #888888;
+}
+
+.validation-item.valid {
+  color: #66bb6a;
+}
+
+.validation-item.invalid {
+  color: #ef5350;
+}
+
+.validation-icon {
+  font-size: 18px;
+}
+
+.fade-out-popout {
+  animation: fadeOut 1.5s ease-in-out forwards;
+  pointer-events: none;
+  opacity: 0;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

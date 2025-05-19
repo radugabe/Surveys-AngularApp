@@ -1,0 +1,14 @@
+@for (chart of charts; track i; let i = $index) {
+  <div class="chart-question-container card card-dark">
+    <div class="title">{{ i + 1 }}. {{ survey.questions[i].text }}</div>
+    <div class="chart-canvas-container">
+      <canvas
+        baseChart
+        [data]="chart.data"
+        [type]="chart.type"
+        [options]="chart.options">
+      </canvas>
+    </div>
+  </div>
+}
+  
